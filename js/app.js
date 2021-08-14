@@ -4,142 +4,142 @@ let hours = ['6AM ', '7AM ', '8AM ', '9AM ', '10AM ', '11AM ', '12PM ', '1PM ', 
 let tableEl = document.createElement('table');
 container.appendChild(tableEl);
 
- let  shopsOfSalmon = [];
+ let  salmonStore = [];
+ 
 
-function ShopOfSalmonCookie (location, minCustomer, maxCustomer, avgCookies)
+function salmonCookiesStore (storeName, minCust, maxCust, averageCookie)
 
 {
-
-this.location = location;
-this.minCustomer = minCustomer;
-this.maxCustomer = maxCustomer;
-this.avgCookies = avgCookies;
+this.storeName = storeName;
+this.minCust = minCust;
+this.maxCust = maxCust;
+this.averageCookie = averageCookie;
 this.total = 0;
-this.randCustomer = [];
-
-this.cookiesByHour = [];
-shopsOfSalmon.push(this);
+this.randomCust = [];
+this.cookiePerhours = [];
+salmonStore.push(this);
 }
 
- let shopA = new ShopOfSalmonCookie ('seatlle', 23, 65,6.3)
-    let shopB = new ShopOfSalmonCookie ('Tokyo', 3, 24,1.2)
-    let shopC = new ShopOfSalmonCookie ('Dubai', 11, 38,3.7)
-    let shopD = new ShopOfSalmonCookie ('Paris', 20, 38,2.3)
-    let shopE = new ShopOfSalmonCookie ('Lima', 2, 16,4.6)
+    let storeOne = new salmonCookiesStore ('seatlle', 23, 65,6.3)
+    let storeTwo = new salmonCookiesStore ('Tokyo', 3, 24,1.2)
+    let storeThree = new salmonCookiesStore ('Dubai', 11, 38,3.7)
+    let storeFour = new salmonCookiesStore ('Paris', 20, 38,2.3)
+    let storeFive = new salmonCookiesStore ('Lima', 2, 16,4.6)
 
 
-ShopOfSalmonCookie.prototype.numCustomersPerHour = function() 
+salmonCookiesStore.prototype.custPerHours = function() 
 {
-
-   let min;
+      let min;
       let max;
       for(let i = 0; i < hours.length; i++)
       {
-        min = Math.ceil(this.minCustomer);
-        max = Math.floor(this.maxCustomer);
-
- let randomCustomer = Math.floor(Math.random() * (max - min + 1) + min);
-        this.randCustomer.push(randomCustomer)
+        min = Math.ceil(this.minCust);
+        max = Math.floor(this.maxCust);
+        let custRandom = Math.floor(Math.random() * (max - min + 1) + min);
+        this.randomCust.push(custRandom)
       }
 }
 
-ShopOfSalmonCookie.prototype.numCookiesPerHour = function(){
+salmonCookiesStore.prototype.hoursByCookies = function(){
 
   for (let i = 0; i < hours.length; i++) 
     {
-
- this.cookiesByHour[i] = Math.ceil(this.randCustomer[i] * this.avgCookies);
-        this.total += this.cookiesByHour[i];  
+        this.cookiePerhours[i] = Math.ceil(this.randomCust[i] * this.averageCookie);
+        this.total += this.cookiePerhours[i];  
     }
 }
 
-ShopOfSalmonCookie.prototype.render = function () 
+salmonCookiesStore.prototype.render = function () 
 {
-
   let trEl= document.createElement('tr');
          tableEl.appendChild(trEl)
          let tdEl1 = document.createElement('td');
          trEl.appendChild(tdEl1);
-         tdEl1.textContent = ${this.location};
-
+         tdEl1.textContent = ${this.storeName};
+         
     for (let i=0; i < hours.length; i++)
     {  let tdEl = document.createElement('td');
     trEl.appendChild(tdEl);
-    tdEl.textContent = ${this.cookiesByHour[i]};
+    tdEl.textContent = ${this.cookiePerhours[i]};
     }
 
-let tdEl5 = document.createElement('td');
+    let tdEl5 = document.createElement('td');
      trEl.appendChild(tdEl5);
      tdEl5.textContent = this.total; 
 }
 
-function  tableHeaderCreater() {
+      function  createrOfHeader() {
         let trEl = document.createElement('tr');
         tableEl.appendChild(trEl);
-
+     
         let thEl1 = document.createElement('th');
         trEl.appendChild(thEl1);
         thEl1.textContent = '';
-
+     
 
         for (let i = 0; i < hours.length; i++) {
             let thEl1 = document.createElement('th');
             trEl.appendChild(thEl1);
             thEl1.textContent = ${hours[i]};
-
+     
         }
         let thEl10 = document.createElement('th');
         trEl.appendChild(thEl10);
         thEl10.textContent = 'Daily Total';
       }
-     tableHeaderCreater();
-
-    function tableFooterCreater(){
+     createrOfHeader();
+     
+    function createrOfFooter(){
       let trEl = document.createElement('tr');
         tableEl.appendChild(trEl)
         let thEl20 = document.createElement('td');
         trEl.appendChild(thEl20);
-        thEl20.textContent = 'total';
-        let newTotal = 0;
 
+        thEl20.textContent = 'Total';
+
+        thEl20.textContent = 'total';
+
+        let newTotal = 0;
+        
         for(let i = 0 ; i < hours.length; i++)
         {
             let total = 0;
-
-            for(let j = 0 ; j < shopsOfSalmon.length; j++)
+             
+            for(let j = 0 ; j < salmonStore.length; j++)
             {
-                total =  total + shopsOfSalmon[j].cookiesByHour[i];
-                newTotal = newTotal + shopsOfSalmon[j].cookiesByHour[i];
+                total =  total + salmonStore[j].cookiePerhours[i];
+                newTotal = newTotal + salmonStore[j].cookiePerhours[i];
             }
-
+         
             let thEl10 = document.createElement('td');
             trEl.appendChild(thEl10);
             thEl10.textContent = total;
         }
 
- let thEl70 = document.createElement('td');
+        let thEl70 = document.createElement('td');
         trEl.appendChild(thEl70);
         thEl70.textContent = newTotal;
     };
 
-shopA.numCustomersPerHour();
-    shopA.numCookiesPerHour();
-    shopA.render()
 
-shopB.numCustomersPerHour();
-    shopB.numCookiesPerHour();
-    shopB.render()
+    storeOne.custPerHours();
+    storeOne.hoursByCookies();
+    storeOne.render()
 
-  shopC.numCustomersPerHour();
-    shopC.numCookiesPerHour();
-    shopC.render()
+    storeTwo.custPerHours();
+    storeTwo.hoursByCookies();
+    storeTwo.render()
 
-shopD.numCustomersPerHour();
-    shopD.numCookiesPerHour();
-    shopD.render()
+    storeThree.custPerHours();
+    storeThree.hoursByCookies();
+    storeThree.render()
 
- shopE.numCustomersPerHour();
-    shopE.numCookiesPerHour();
-    shopE.render()
+    storeFour.custPerHours();
+    storeFour.hoursByCookies();
+    storeFour.render()
 
- tableFooterCreater();
+    storeFive.custPerHours();
+    storeFive.hoursByCookies();
+    storeFive.render()
+
+    createrOfFooter();

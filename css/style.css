@@ -1,0 +1,103 @@
+Ahmad Albzour
+header
+{
+  background: rgb(77, 77, 77);
+  margin: auto;
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+a:link, a:visited 
+{
+  background-color: #888888;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+  
+  a:hover, a:active 
+{
+  background-color: red;
+}
+
+#hours li
+{
+  margin: auto;
+  text-align: center;
+  list-style:circle inside;
+  display: inline-block;
+  margin-left: 80px;
+  font: bold 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#hours h2
+{
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#stores li
+{
+  margin: auto;
+  text-align: center;
+  list-style:circle inside;
+  display: inline-block;
+  margin-left: 250px;
+  font: bold;
+  margin-bottom: 40px;
+  font: bold 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+img {
+  display: inline-block;
+  border: 10px solid rgb(236, 134, 0);
+  border-radius: 4px;
+  padding: 5px;
+  width: 400px;
+  height: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+footer li
+{
+  margin: auto;
+  text-align: center;
+  list-style:circle inside;
+  display: inline-block;
+  margin-left: 270px;
+  font: bold 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+
+footer
+{
+  background: rgb(77, 77, 77);
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+body
+{
+  background-color: rgb(153, 153, 153);
+}
+
+table, th, td 
+{
+  border: 3px solid black;
+  margin: auto;
+  margin-top: 300px;
+  font: bold 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 5px;
+}
