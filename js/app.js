@@ -20,12 +20,6 @@ this.cookiePerhours = [];
 salmonStore.push(this);
 }
 
-    let storeOne = new salmonCookiesStore ('seatlle', 23, 65,6.3)
-    let storeTwo = new salmonCookiesStore ('Tokyo', 3, 24,1.2)
-    let storeThree = new salmonCookiesStore ('Dubai', 11, 38,3.7)
-    let storeFour = new salmonCookiesStore ('Paris', 20, 38,2.3)
-    let storeFive = new salmonCookiesStore ('Lima', 2, 16,4.6)
-
 
 salmonCookiesStore.prototype.custPerHours = function() 
 {
@@ -55,12 +49,13 @@ salmonCookiesStore.prototype.render = function ()
          tableEl.appendChild(trEl)
          let tdEl1 = document.createElement('td');
          trEl.appendChild(tdEl1);
-         tdEl1.textContent = ${this.storeName};
+         tdEl1.textContent = this.storeName;
+
 
     for (let i=0; i < hours.length; i++)
     {  let tdEl = document.createElement('td');
     trEl.appendChild(tdEl);
-    tdEl.textContent = ${this.cookiePerhours[i]};
+    tdEl.textContent = this.cookiePerhours[i];
     }
 
     let tdEl5 = document.createElement('td');
@@ -68,7 +63,8 @@ salmonCookiesStore.prototype.render = function ()
      tdEl5.textContent = this.total; 
 }
 
-      function  createrOfHeader() {
+
+      function  creatorOfHeader() {
         let trEl = document.createElement('tr');
         tableEl.appendChild(trEl);
      
@@ -80,7 +76,7 @@ salmonCookiesStore.prototype.render = function ()
         for (let i = 0; i < hours.length; i++) {
             let thEl1 = document.createElement('th');
             trEl.appendChild(thEl1);
-            thEl1.textContent = ${hours[i]};
+            thEl1.textContent = hours[i];
      
         }
         let thEl10 = document.createElement('th');
@@ -88,7 +84,7 @@ salmonCookiesStore.prototype.render = function ()
         thEl10.textContent = 'Daily Total';
       }
       
-      let form = document.getElementById('form');
+      let form = document.getElementById('formID');
     form.addEventListener('submit', newStore);
     function newStore(event) {
     
@@ -111,7 +107,6 @@ salmonCookiesStore.prototype.render = function ()
 
         }
 
-     creatorOfHeader();
      
     function creatorOfFooter(){
       let trEl = document.createElement('tr');
@@ -146,6 +141,15 @@ salmonCookiesStore.prototype.render = function ()
     };
 
 
+    let storeOne = new salmonCookiesStore ('seatlle', 23, 65,6.3)
+    let storeTwo = new salmonCookiesStore ('Tokyo', 3, 24,1.2)
+    let storeThree = new salmonCookiesStore ('Dubai', 11, 38,3.7)
+    let storeFour = new salmonCookiesStore ('Paris', 20, 38,2.3)
+    let storeFive = new salmonCookiesStore ('Lima', 2, 16,4.6)
+
+     creatorOfHeader();
+
+
     storeOne.custPerHours();
     storeOne.hoursByCookies();
     storeOne.render()
@@ -165,5 +169,6 @@ salmonCookiesStore.prototype.render = function ()
     storeFive.custPerHours();
     storeFive.hoursByCookies();
     storeFive.render()
+
 
     createrOfFooter();
