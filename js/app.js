@@ -56,7 +56,7 @@ salmonCookiesStore.prototype.render = function ()
          let tdEl1 = document.createElement('td');
          trEl.appendChild(tdEl1);
          tdEl1.textContent = ${this.storeName};
-         
+
     for (let i=0; i < hours.length; i++)
     {  let tdEl = document.createElement('td');
     trEl.appendChild(tdEl);
@@ -87,9 +87,33 @@ salmonCookiesStore.prototype.render = function ()
         trEl.appendChild(thEl10);
         thEl10.textContent = 'Daily Total';
       }
-     createrOfHeader();
+      
+      let form = document.getElementById('form');
+    form.addEventListener('submit', newStore);
+    function newStore(event) {
+    
+        event.preventDefault();
+        let storeName = event.target.storeName.value;
+        let minCust = event.target.minCust.value;
+        let maxCust = event.target.maxCust.value;
+        let averageCookie = event.target.averageCookie.value;
+        let newShop = new salmonCookiesStore (storeName, minCust, maxCust, averageCookie);
+        
+
+        let table = tableEl.rows.length-1;
+            tableEl.deleteRow(table);
+
+            newShop.custPerHours();
+            newShop.hoursByCookies();
+            newShop.render();
+
+            creatorOfFooter();
+
+        }
+
+     creatorOfHeader();
      
-    function createrOfFooter(){
+    function creatorOfFooter(){
       let trEl = document.createElement('tr');
         tableEl.appendChild(trEl)
         let thEl20 = document.createElement('td');

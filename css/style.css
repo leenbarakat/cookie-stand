@@ -1,19 +1,19 @@
-Ahmad Albzour
+
 header
 {
-  background: rgb(77, 77, 77);
+  background: rgb(237, 161, 247);
   margin: auto;
   text-align: center;
-  font-size: 35px;
+  font-size: 45px;
   font-weight: bold;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 17px;
+  padding-bottom: 15px;
 }
 
 a:link, a:visited 
 {
-  background-color: #888888;
-  color: white;
+  background-color: #ffcaca;
+  color: rgb(3, 3, 3);
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
@@ -22,7 +22,7 @@ a:link, a:visited
   
   a:hover, a:active 
 {
-  background-color: red;
+  background-color: rgb(0, 247, 255);
 }
 
 #hours li
@@ -31,15 +31,15 @@ a:link, a:visited
   text-align: center;
   list-style:circle inside;
   display: inline-block;
-  margin-left: 80px;
-  font: bold 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-left: 100px;
+  font: bold 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #hours h2
 {
   margin: auto;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 #stores li
@@ -48,24 +48,24 @@ a:link, a:visited
   text-align: center;
   list-style:circle inside;
   display: inline-block;
-  margin-left: 250px;
+  margin-left: 300px;
   font: bold;
-  margin-bottom: 40px;
-  font: bold 15px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-bottom: 35px;
+  font: bold 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 img {
   display: inline-block;
-  border: 10px solid rgb(236, 134, 0);
-  border-radius: 4px;
-  padding: 5px;
-  width: 400px;
-  height: 250px;
+  border: 10px solid rgb(236, 0, 0);
+  border-radius: 2px;
+  padding: 7px;
+  width: 350px;
+  height: 300px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10px;
-  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 footer li
@@ -74,14 +74,14 @@ footer li
   text-align: center;
   list-style:circle inside;
   display: inline-block;
-  margin-left: 270px;
-  font: bold 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-left: 350px;
+  font: bold 40px "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 }
 
 footer
 {
-  background: rgb(77, 77, 77);
+  background: rgb(255, 210, 210);
   margin-top: 30px;
   margin-bottom: 10px;
   padding-top: 20px;
@@ -90,12 +90,12 @@ footer
 
 body
 {
-  background-color: rgb(153, 153, 153);
+  background-color: rgb(255, 142, 142);
 }
 
 table, th, td 
 {
-  border: 3px solid black;
+  border: 5px solid black;
   margin: auto;
   margin-top: 300px;
   font: bold 20px "Helvetica Neue", Helvetica, Arial, sans-serif;
